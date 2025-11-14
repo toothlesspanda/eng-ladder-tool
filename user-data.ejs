@@ -1,0 +1,26 @@
+<h1>User</h1>
+<div class="row justify-content-md-start">
+  <div class="col">
+    <%= customOrFramework %>
+    <% categories.forEach(function(category) { %>
+      <div class="row">
+        <div class="col-3 display-flex-start">
+          <label for="<%= category.name %>" class="col-sm-2 col-form-label"><%= category.name %></label>
+        </div>
+        <%- category %>
+        <div class="col-2 display-flex-start">
+          <select title="<%= category.name %>" id="<%= category.name %>" class="form-select user-data-selector" aria-label="Default select example">
+            <% for (let i = 1; i <= maxRank; i++) { %>
+              <option value="<%= i %>"><%= i %></option>
+            <% } %>
+          </select>
+        </div>
+      </div>
+    <% }); %>
+    <div class="row">
+      <div class="col-2 display-flex-start">
+        <button class="form-control" type="button" onclick="addUserData()"> Add</button>
+      </div>
+    </div>
+  </div>
+</div>
