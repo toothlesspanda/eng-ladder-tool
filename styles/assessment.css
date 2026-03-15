@@ -1,0 +1,70 @@
+/* Assessment form — one row per framework category with a level dropdown. */
+
+
+#assessment-section {
+    overflow: scroll;
+    height: 40vh;
+}
+
+.assessment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.assessment-row {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 8px;
+  row-gap: 3px;
+  align-items: center;
+}
+
+.assessment-row > label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.assessment-row > select { width: 100%; }
+
+.level-hint {
+  grid-column: 1 / -1;
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-style: italic;
+  min-height: 1em;
+  padding-left: 2px;
+}
+
+/* Empty state shown when no direct report is selected */
+.hint {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Custom framework setup prompt */
+.setup-description {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+.setup-description code,
+.level-hint code {
+  font-family: monospace;
+  background: var(--bg);
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.setup-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

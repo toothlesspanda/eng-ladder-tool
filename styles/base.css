@@ -1,0 +1,40 @@
+/* Reset, design tokens, and base body styles. */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Accent — toasted amber / burnt orange */
+  --primary:      #c8872a;
+  --primary-dark: #e09c38;
+
+  /* Danger */
+  --danger:       #b85050;
+
+  /* Dark anthracite surfaces */
+  --bg:           #1b2028;
+  --surface:      #242b38;
+  --border:       #333f50;
+
+  /* Typography */
+  --text:         #dbd2bc;
+  --muted:        #7a8898;
+
+  /* Misc */
+  --radius:       8px;
+  --shadow:       0 2px 8px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.muted { color: var(--muted); }
+.small { font-size: 0.8rem; }

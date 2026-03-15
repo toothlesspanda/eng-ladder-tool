@@ -1,0 +1,63 @@
+/* Welcome screen — shown on first visit when no data file is open. */
+
+#welcome {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.welcome-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 40px 48px;
+  max-width: 480px;
+  text-align: center;
+}
+
+.welcome-card h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+}
+
+.welcome-card p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.welcome-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.welcome-actions .btn {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  justify-content: center;
+}
+
+.welcome-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 4px 0;
+}
+
+.welcome-hint {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.welcome-hint code {
+  font-family: monospace;
+  background: var(--bg);
+  padding: 1px 4px;
+  border-radius: 3px;
+}

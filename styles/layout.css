@@ -1,0 +1,101 @@
+/* Main layout: flex column so journal section sits below the chart+side grid. */
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+#app-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+#chart-panel {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#side-panel {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  height: 350px;
+  min-width: 0;
+}
+
+#role-selector-section {
+  flex-shrink: 0;
+  width: 350px;
+  overflow-y: auto;
+}
+
+#levels-table-section {
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+#bottom-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+/* Shared card style used by all sections in the side panel */
+section {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px 16px;
+}
+
+section h3 {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+section h3 small {
+  font-size: 0.7rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+section h3 em {
+  color: var(--primary-dark);
+  text-transform: none;
+  font-style: normal;
+  letter-spacing: 0;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 820px) {
+  #app-grid { grid-template-columns: 1fr; }
+  #chart-panel { width: 100%; }
+  #side-panel { flex-direction: column; height: auto; max-height: 500px; }
+  #role-selector-section { width: 100%; }
+  #bottom-row { grid-template-columns: 1fr; }
+}

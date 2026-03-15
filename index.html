@@ -1,65 +1,59 @@
 <!DOCTYPE html>
-<html>
-<meta charset="utf-8">
-
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css">
-  <link rel="stylesheet" href="index.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Engineering Ladder Tool</title>
+  <!-- Base: tokens and reset must come first -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <!-- Per-section styles -->
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/roles.css">
+  <link rel="stylesheet" href="styles/assessment.css">
+  <link rel="stylesheet" href="styles/levels.css">
+  <link rel="stylesheet" href="styles/welcome.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <link rel="stylesheet" href="styles/journal.css">
 </head>
 <body>
-  <div class="container text-center">
-    <div id="header" class="row row-cols-12"> 
-       <div class="col">
-        <h1>Personal Development Plan</h1>
-        <p>Following frameworks</p>
-       </div>
-    </div>
-    <div id="container" class="row">
-      <div class="col-2 align-self-start">
-        <input id="toggle-levels-baseline" type="checkbox" checked data-toggle="toggle" data-on="Custom" data-off="Framework" data-onstyle="info" data-offstyle="warning">
-      </div>
-      <div class="col-10"></div>
-      <div class="col-md-6 col-sm-12">
-        <div style="position: relative; width:85%"> <canvas id="chart"></canvas> </div>
-      </div>
-      <div class="col-md-6 col-sm-12">
-        <div id="levels-dropdown" class="row"></div>
-        <div id="levels-explain" class="row"></div>
-        <hr/>
-        <div id="user-data" class="row">
-          <div id="levels-details" class="row"></div>
-        </div>
-      </div>
-      <div class="col-md-12 col-sm-12"></div>
-    </div>
-    <div id="footer" class="row">
-      <div class="col-12">
-         Engineering Ladder Framework by Francisco | Developed by Ines Matos | Github | 2024
-      </div>
-  
-    </div>
-  </div>
+  <header id="header"></header>
 
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+  <main id="main">
+    <!-- Populated by renderApp() or renderWelcome() on boot -->
+  </main>
 
+  <footer>
+    Engineering Ladders framework by
+    <a href="https://www.engineeringladders.com/" target="_blank">engineeringladders.com</a>
+    &mdash; 2024
+  </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-  <script src="./ejs.min.js"></script>
-  
-  <script src="./templates/helpers.js"></script>
-  <script src="./templates/levels-table.precompiled.js"></script>
-  <script src="./templates/levels-selector.precompiled.js"></script>
-  <script src="./templates/user-data.precompiled.js"></script>
-  <script src="./templates/index.js"></script>
-  <script src="./framework-levels.js"></script>
-  <script src="./custom-levels.js"></script>
-  <script src="./chart.js"></script>
-  <script src="./index.js"></script>
+  <!-- Only external dependency: Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- Shared utilities -->
+  <script src="utils.js"></script>
+
+  <!-- Data layer (load order matters: default_framework → store → state → journal) -->
+  <script src="lib/default_framework.js"></script>
+  <script src="lib/store.js"></script>
+  <script src="lib/state.js"></script>
+  <script src="lib/journal.js"></script>
+
+  <!-- Chart -->
+  <script src="chart/radar.js"></script>
+
+  <!-- UI modules (levels before roles because roles calls renderLevelsTable) -->
+  <script src="ui/levels.js"></script>
+  <script src="ui/roles.js"></script>
+  <script src="ui/assessment.js"></script>
+  <script src="ui/header.js"></script>
+  <script src="ui/welcome.js"></script>
+  <script src="ui/journal.js"></script>
+
+  <!-- Entry point -->
+  <script src="main.js"></script>
 </body>
 </html>

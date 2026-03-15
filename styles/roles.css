@@ -1,0 +1,43 @@
+/* Role selector — roles grouped by category, pill-style checkboxes. */
+
+.role-group { margin-bottom: 10px; }
+.role-group:last-child { margin-bottom: 0; }
+
+.role-group-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+
+.role-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.role-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 11px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+  user-select: none;
+}
+
+.role-label input  { display: none; }
+.role-label:hover  { border-color: var(--primary); }
+
+.role-label.checked {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}

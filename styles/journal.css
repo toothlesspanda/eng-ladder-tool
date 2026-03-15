@@ -1,0 +1,64 @@
+/* Progress Notes (journal) section — full-width below chart + side panel. */
+
+#journal-section {
+  min-width: 0;
+}
+
+.journal-controls {
+  margin-bottom: 10px;
+}
+
+.journal-history-select {
+  width: 100%;
+  max-width: 320px;
+}
+
+.journal-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.journal-textarea {
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.journal-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.journal-textarea:disabled {
+  background: var(--surface);
+  color: var(--muted);
+  cursor: default;
+}
+
+.journal-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.journal-status {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.btn-sm {
+  padding: 4px 12px;
+  font-size: 0.8rem;
+}

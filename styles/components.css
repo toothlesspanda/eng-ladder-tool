@@ -1,0 +1,83 @@
+/* Reusable UI primitives: buttons, select, toggle group. */
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  transition: filter 0.15s;
+}
+
+.btn:hover:not(:disabled) { filter: brightness(1.1); }
+.btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.btn-sm      { padding: 4px 10px; font-size: 1rem; line-height: 1.2; }
+.btn-xs      { padding: 2px 8px;  font-size: 0.72rem; }
+.btn-primary { background: var(--primary); color: #1b2028; }
+.btn-danger  { background: var(--danger);  color: #f0e8d8; }
+
+.btn-secondary {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+.btn-ghost:hover:not(:disabled) {
+  filter: none;
+  background: var(--border);
+  color: var(--text);
+}
+
+/* ── Select ──────────────────────────────────────────────────────────────── */
+
+select {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 5px 8px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--text);
+  background: var(--surface);
+  cursor: pointer;
+  appearance: auto;
+}
+
+select:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+
+/* ── Toggle group ────────────────────────────────────────────────────────── */
+
+.toggle-group {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.toggle-btn {
+  padding: 5px 14px;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: none;
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.toggle-btn.active               { background: var(--primary); color: #1b2028; }
+.toggle-btn:not(.active):hover   { background: var(--bg); }

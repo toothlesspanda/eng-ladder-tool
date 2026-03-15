@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "activeUser": "Matilde",
+  "activeFramework": "custom",
+  "users": {
+    "Matilde": {
+      "default": [
+        2,
+        2,
+        1,
+        2,
+        3
+      ],
+      "journal": [
+        {
+          "date": "2026-03-15",
+          "text": "Still need to work on the social skills\nNext steps:\n- pair programming\n- conduct small presentation to the team\n- meetings with stakeholders"
+        }
+      ],
+      "custom": [
+        3,
+        3,
+        2,
+        3,
+        4
+      ]
+    }
+  }
+}
