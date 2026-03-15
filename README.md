@@ -2,7 +2,7 @@
 
 A browser-based tool for tracking and visualizing engineering career progression against a configurable ladder framework. Built with the assistance of ClaudeCode.
 
-[](images/app.png)
+<img src="images/app.png"/>
 
 ---
 
@@ -83,8 +83,7 @@ Ranks are defined across 5 categories: **Technology**, **System**, **People**, *
 
 The **Custom** framework lives entirely in `framework.json` and can be shaped to match your company's specific ladder.
 
-
-[](images/app_custom.png)
+<img src="images/app_custom.png"/>
 ---
 
 ## Project structure
