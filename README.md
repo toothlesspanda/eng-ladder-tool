@@ -2,7 +2,7 @@
 
 A browser-based tool for tracking and visualizing engineering career progression against a configurable ladder framework. Built with the assistance of ClaudeCode.
 
-<img src="images/app.png"/>
+<img src="images/welcome_app.png"/>
 
 ---
 
@@ -15,12 +15,6 @@ A browser-based tool for tracking and visualizing engineering career progression
 ## How to run
 
 The tool is a plain HTML/JS/CSS app — no build step, no servers, no dependencies to install.
-
-```
-open index.html
-```
-
-Works in Chrome and Edge. The [File System Access API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API) lets the app read and write your data folder directly.
 
 ---
 
@@ -38,6 +32,8 @@ The folder handle is remembered between sessions — you won't be asked to pick 
 ---
 
 ## How to use
+
+<img src="images/app.png"/>
 
 ### 1. Open a folder
 
@@ -69,15 +65,14 @@ The **Progress Notes** section at the bottom of the page is a per-user journal. 
 
 ## Frameworks
 
-The **Default** framework ships with 8 roles across a generic software engineering ladder:
+The **Default** framework is based on [engineering-ladders.com](https://www.engineeringladders.com/) and ships with 17 roles across 4 tracks:
 
-| Label | Role |
+| Labels | Track |
 |---|---|
-| SE1 – SE3 | Software Engineer |
-| SSE1 – SSE2 | Senior Software Engineer |
-| TL | Team Lead |
-| Staff | Staff Engineer |
-| EM | Engineering Manager |
+| D1 – D7 | Developer |
+| TL4 – TL7 | Tech Lead |
+| TPM4 – TPM7 | Technical Project Manager |
+| EM5 – EM7 | Engineering Manager |
 
 Ranks are defined across 5 categories: **Technology**, **System**, **People**, **Process**, and **Influence**.
 
