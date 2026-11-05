@@ -1,0 +1,20 @@
+<table class="table table-sm">
+  <thead>
+    <tr>
+       <th scope="col">Level</th>
+      <% categories.forEach(function(category) { %>
+        <th scope="col"><%= category.name %></th>
+      <% }); %>
+    </tr>
+  </thead>
+  <tbody>
+      <% levels.forEach(function(level) { %>
+        <tr>
+          <td><%= level.label %></td>
+          <% level.rank.forEach(function(rankValue) { %>
+            <td><%= rankValue %></td>
+          <% }); %>
+        </tr>
+      <% }); %>
+  </tbody>
+</table>

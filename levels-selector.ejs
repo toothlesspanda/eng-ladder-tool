@@ -1,0 +1,5 @@
+<select class="form-select" id="levels-selector" data-placeholder="Choose level" multiple>
+  <% levels.forEach(function(level) { %>
+    <option value="<%= level.label %>"><%= level.label %></option>
+  <% }); %>
+</select>
